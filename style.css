@@ -12,6 +12,39 @@ header {
   text-align: center;
 }
 
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff3d00;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ff3d00;
+}
+
 h1 {
   margin: 0;
 }
@@ -21,6 +54,12 @@ h3 {
 }
 
 #movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+#actor-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
@@ -54,4 +93,47 @@ h3 {
   font-size: 14px;
   margin: 0 10px 10px;
   color: #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  color: #888;
+}
+
+/* Loader container stays the same */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 2.0s ease;
+}
+
+/* Logo animation */
+.loader-logo {
+  width: 300px;
+  height: auto;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 }
